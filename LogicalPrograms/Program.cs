@@ -6,22 +6,38 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            FibonacciSeries();
+            PerfectNumber();
         }
-        public static void FibonacciSeries()
+        public static void PerfectNumber()
         {
-            int X1=0, X2=1, X3=1, Number;
-            Console.WriteLine("Enter Eny Number");
-            Number = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("The Fibonacci Series For the entered Number is:");
-            Console.WriteLine("...........................");
-            Console.Write(X1 + " " + X2 + " ");
-            for(int i=2; i < Number;i++)
+            int i, n, sum;
+            int min, max;
+
+            Console.WriteLine("Find the Perfect number within a given number of range ");
+
+            Console.WriteLine("Enter the Lower Limit");
+            min = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter the Upper Limit");
+            max = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("The Perfect Number within the given Range is :");
+
             {
-                X3 = X1 + X2;
-                Console.Write(X3 + " ");
-                X1 = X2;
-                X2 = X3;
+                for (n = min; n < max; n++)
+                {
+                    i = 1;
+                    sum = 0;
+
+                    while (i < n)
+                    {
+                        if (n % i == 0)
+                            sum = sum + i;
+                        i++;
+                    }
+                    if (sum == n)
+                        Console.WriteLine("{0}", n);
+                }
             }
         }
     }
