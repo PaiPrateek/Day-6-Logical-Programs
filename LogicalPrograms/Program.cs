@@ -23,9 +23,6 @@ namespace LogicalPrograms
                 X1 = X2;
                 X2 = X3;
             }
-
-
         }
-
     }
 }
