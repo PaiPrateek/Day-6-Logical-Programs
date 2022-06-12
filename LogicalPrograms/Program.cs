@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace LogicalPrograms
 {
@@ -6,28 +7,21 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            CouponNumber();
+            StopWatch();
         }
-        public static void CouponNumber()
+        public static void StopWatch()
         {
-            Console.WriteLine("Enter Distinct Number N:");
-            int n = Convert.ToInt32(Console.ReadLine());
-
-            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-            var stringChars = new char[6];
-            var random = new Random();
-
-            int j = 0;
-            while (j < n)
-            {
-                for (int i = 0; i < stringChars.Length; i++)
-                {
-                    stringChars[i] = chars[random.Next(chars.Length)];
-                }
-                Console.WriteLine(stringChars);
-                j++;
-            }
+            Stopwatch stopwatch = new Stopwatch();
+            Console.Write("Please Enter to Start the Stop Watch");
+            string start= Console.ReadLine();
+            stopwatch.Start();
+            Console.WriteLine("....................");
+            Console.Write("Please Enter to Stop the Stop Watch");
+            string stop = Console.ReadLine();
+            stopwatch.Stop();
+            Console.WriteLine("....................");
+            Console.WriteLine("Time Elapaed {0}", stopwatch.Elapsed);
         }
+
     }
 }
