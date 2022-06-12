@@ -6,22 +6,28 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            ReverseNumber();
+            CouponNumber();
         }
-        public static void ReverseNumber()
+        public static void CouponNumber()
         {
-            int n, reverse = 0, rem;
-            Console.Write("Enter a number: ");
-            n = Convert.ToInt32(Console.ReadLine());
-            while (n != 0)
+            Console.WriteLine("Enter Distinct Number N:");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            var stringChars = new char[6];
+            var random = new Random();
+
+            int j = 0;
+            while (j < n)
             {
-                rem = n % 10;
-                reverse = reverse * 10 + rem;
-                n /= 10;
+                for (int i = 0; i < stringChars.Length; i++)
+                {
+                    stringChars[i] = chars[random.Next(chars.Length)];
+                }
+                Console.WriteLine(stringChars);
+                j++;
             }
-            Console.Write("Reversed Number: " + reverse);
         }
-
-
     }
 }
