@@ -6,39 +6,30 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            PerfectNumber();
+            PrimeNumber();
         }
-        public static void PerfectNumber()
+        public static void PrimeNumber()
         {
-            int i, n, sum;
-            int min, max;
+            int n, i, m = 0, p = 0;
 
-            Console.WriteLine("Find the Perfect number within a given number of range ");
+            Console.Write("Enter the Number to check Prime: ");
+            n = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter the Lower Limit");
-            min = Convert.ToInt32(Console.ReadLine());
+            m = n / 2;
 
-            Console.WriteLine("Enter the Upper Limit");
-            max = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("The Perfect Number within the given Range is :");
-
+            for (i = 2; i <= m; i++)
             {
-                for (n = min; n < max; n++)
+                if (n % i == 0)
                 {
-                    i = 1;
-                    sum = 0;
-
-                    while (i < n)
-                    {
-                        if (n % i == 0)
-                            sum = sum + i;
-                        i++;
-                    }
-                    if (sum == n)
-                        Console.WriteLine("{0}", n);
+                    Console.Write("Number is not Prime Number.");
+                    p = 1;
+                    break;
                 }
             }
+            if (p == 0)
+
+                Console.Write("Number is Prime Number.");
         }
+
     }
 }
