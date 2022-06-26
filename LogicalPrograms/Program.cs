@@ -8,35 +8,59 @@ namespace LogicalPrograms
 
         static void Main(string[] args)
         {
-            int day = dayofweek(04, 11, 1996);
-
-            switch(day)
+            double fahre;
+            
+            Console.WriteLine("Press 0 to Convert Celsius to Fahrenheit Press 1 for Fahrenheit to Celsius ");
+            int option = int.Parse(Console.ReadLine());
+            switch (option)
             {
                 case 0:
-                    Console.WriteLine("Sunday");
-                    break;
-                case 1:
-                    Console.WriteLine("Monday");
-                    break;
-                case 3:
-                    Console.WriteLine("Tuesday");
-                    break;
-                case 4:
-                    Console.WriteLine("Wednesday");
-                    break;
-                case 5:
-                    Console.WriteLine("Thursday");
-                    break;
-                case 6:
-                    Console.WriteLine("Friday");
-                    break;
-                case 7:
-                    Console.WriteLine("Saturday");
+                    Console.WriteLine("Enter Celcius:");
+                    double celsius = double.Parse(Console.ReadLine());
+                    fahre = (celsius * 9/5)+ 32;
+                    Console.WriteLine("Fahrenheit: " + fahre);
                     break;
 
+                case 1:
+                    Console.WriteLine("Enter Fahrenheit:");
+                    double fahrenheit = double.Parse(Console.ReadLine());
+                    celsius = (fahrenheit - 32) * 5 / 9;
+                    Console.WriteLine("Celcius: " + celsius);
+                    break;
+                    default:
+                    break;
             }
 
-            Console.Write(day);
+
+            //int day = dayofweek(04, 11, 1996);
+
+            //switch (day)
+            //{
+            //    case 0:
+            //        Console.WriteLine("Sunday");
+            //        break;
+            //    case 1:
+            //        Console.WriteLine("Monday");
+            //        break;
+            //    case 3:
+            //        Console.WriteLine("Tuesday");
+            //        break;
+            //    case 4:
+            //        Console.WriteLine("Wednesday");
+            //        break;
+            //    case 5:
+            //        Console.WriteLine("Thursday");
+            //        break;
+            //    case 6:
+            //        Console.WriteLine("Friday");
+            //        break;
+            //    case 7:
+            //        Console.WriteLine("Saturday");
+            //        break;
+
+            //}
+
+            //Console.Write(day);
 
             //StopWatch();
             //Console.WriteLine("Enter Amount for Change is needed");
@@ -47,7 +71,7 @@ namespace LogicalPrograms
         {
             Stopwatch stopwatch = new Stopwatch();
             Console.Write("Please Enter to Start the Stop Watch");
-            string start= Console.ReadLine();
+            string start = Console.ReadLine();
             stopwatch.Start();
             Console.WriteLine("....................");
             Console.Write("Please Enter to Stop the Stop Watch");
